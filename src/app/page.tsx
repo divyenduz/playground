@@ -5,7 +5,9 @@ export default async function Home() {
 
   return (
     <div className={styles.page}>
-      <main className={styles.main}>Hello ${process.env.FROM_ENV}</main>
+      <main className={styles.main}>
+        Hello {process.env.FROM_ENV} / {process.env.PLATFORM}
+      </main>
     </div>
   );
 }
