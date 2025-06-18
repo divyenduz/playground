@@ -1,5 +1,6 @@
 async function main() {
-  console.log({ env: process.env });
+  console.error({ env: process.env });
+  console.log(`export FROM_ENV='test'`);
 }
 
 main();

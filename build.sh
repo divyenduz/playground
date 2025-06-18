@@ -12,5 +12,5 @@ mv ./xata /usr/local/bin/xata
 
 xata --version
 
-node build.js
+eval $(node build.js)
 next build
