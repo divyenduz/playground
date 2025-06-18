@@ -6,7 +6,8 @@ export default async function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        Hello {process.env.FROM_ENV} / {process.env.PLATFORM}
+        Hello {process.env.FROM_ENV} / {process.env.VERCEL_GIT_COMMIT_REF} /{" "}
+        {process.env.PLATFORM}
       </main>
     </div>
   );
