@@ -1,5 +1,3 @@
-async function main() {
-  console.log({ env: process.env });
-}
+async function main() {}
 
 main();
