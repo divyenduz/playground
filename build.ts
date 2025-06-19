@@ -14,7 +14,7 @@ async function main() {
 
   await $`curl -L -o xata ${binaryUrl}`;
   await $`chmod +x xata`;
-  await $`sudo cp ./xata /usr/local/bin/xata`;
+  await $`cp ./xata /usr/local/bin/xata`;
 
   await $`xata branch delete ${process.env.VERCEL_GIT_COMMIT_REF} --yes || true`;
   await $`xata branch create --name ${process.env.VERCEL_GIT_COMMIT_REF}`;
