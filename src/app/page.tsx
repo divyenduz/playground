@@ -1,14 +1,13 @@
-import postgres from "postgres";
 import styles from "./page.module.css";
 import invariant from "tiny-invariant";
+import { createUser } from "./actions/createUser";
+import { listUsers } from "./actions/listUsers";
 
 export default async function Home() {
   invariant(process.env.DATABASE_URL, "DATABASE_URL is not set");
-  const sql = postgres(process.env.DATABASE_URL);
-  console.log(process.env);
 
-  await sql`insert into users (id, name) values (1, 'Alice from branch') on conflict do nothing`;
-  const users = await sql`select * from users`;
+  await createUser();
+  const users = await listUsers();
 
   return (
     <div className={styles.page}>
