@@ -1,5 +1,5 @@
-import type { Types } from "@xata.io/api";
 import { $ } from "bun";
+import { Branch } from "./types";
 
 async function main() {
   console.log(`export FROM_ENV='test'`);
@@ -19,7 +19,7 @@ async function main() {
   await $`xata branch delete ${process.env.VERCEL_GIT_COMMIT_REF} --yes || true`.quiet();
   await $`xata branch create --name ${process.env.VERCEL_GIT_COMMIT_REF}`.quiet();
 
-  const branch: Types.BranchMetadata =
+  const branch: Branch =
     await $`xata branch view ${process.env.VERCEL_GIT_COMMIT_REF} --json`
       .quiet()
       .json();
