@@ -16,8 +16,8 @@ async function main() {
   await $`chmod +x xata`;
   await $`cp ./xata /usr/local/bin/xata`;
 
-  await $`xata branch delete ${process.env.VERCEL_GIT_COMMIT_REF} --yes || true`;
-  await $`xata branch create --name ${process.env.VERCEL_GIT_COMMIT_REF}`;
+  await $`xata branch delete ${process.env.VERCEL_GIT_COMMIT_REF} --yes || true`.quiet();
+  await $`xata branch create --name ${process.env.VERCEL_GIT_COMMIT_REF}`.quiet();
 
   const branch: Types.BranchMetadata =
     await $`xata branch view ${process.env.VERCEL_GIT_COMMIT_REF} --json`
