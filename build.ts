@@ -22,8 +22,8 @@ async function main() {
       .quiet()
       .json();
 
-  console.log(`export FROM_ENV='test'`);
-  console.log(`export DATABASE_URL='${branch.connectionString}'`);
+  console.log(`export FROM_ENV='test';`);
+  console.log(`export DATABASE_URL='${branch.connectionString}';`);
 }
 
 main();
