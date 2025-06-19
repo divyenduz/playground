@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import invariant from "tiny-invariant";
+// import invariant from "tiny-invariant";
 import { createUser } from "./actions/createUser";
 import { listUsers } from "./actions/listUsers";
 
@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 
 export default async function Home() {
-  invariant(process.env.DATABASE_URL, "DATABASE_URL is not set");
+  // invariant(process.env.DATABASE_URL, "DATABASE_URL is not set");
 
   await createUser();
   const users = await listUsers();
