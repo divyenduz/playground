@@ -12,8 +12,17 @@ export default async function Home() {
   console.log(process.env);
   console.log(process.env.DATABASE_URL);
 
-  await createUser();
-  const users = await listUsers();
+  try {
+    await createUser();
+  } catch (e) {
+    console.log(e);
+  }
+  let users: unknown[] = [];
+  try {
+    users = await listUsers();
+  } catch (e) {
+    console.error(e);
+  }
 
   return (
     <div className={styles.page}>

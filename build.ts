@@ -2,8 +2,6 @@ import { $ } from "bun";
 import { Branch } from "./types";
 
 async function main() {
-  console.log(`export FROM_ENV='test'`);
-
   const manifestResponse = await fetch(
     "https://xata-cli-versions.s3.amazonaws.com/channels/latest/manifest.json"
   );
@@ -24,6 +22,7 @@ async function main() {
       .quiet()
       .json();
 
+  console.log(`export FROM_ENV='test'`);
   console.log(`export DATABASE_URL='${branch.connectionString}'`);
 }
 

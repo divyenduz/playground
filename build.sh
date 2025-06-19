@@ -12,6 +12,7 @@ set -e
 # xata branch view --json
 
 eval $(bun run build.ts)
+echo $FROM_ENV
 echo $DATABASE_URL
 next build
 xata status
