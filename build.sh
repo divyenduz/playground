@@ -9,6 +9,11 @@ chmod +x ./xata
 mv ./xata /usr/local/bin/xata
 
 xata version
+xata org list
+
+xata branch view --json
+
+bun || true
 
 eval $(node build.js)
 next build
