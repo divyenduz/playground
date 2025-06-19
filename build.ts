@@ -1,0 +1,30 @@
+import { Types } from "@xata.io/api";
+import { $ } from "bun";
+
+async function main() {
+  console.log(`export FROM_ENV='test'`);
+
+  const manifestResponse = await fetch(
+    "https://xata-cli-versions.s3.amazonaws.com/channels/latest/manifest.json"
+  );
+  const manifest = await manifestResponse.json();
+
+  const linuxX64Target = manifest.targets["linux-x64"];
+  const binaryUrl = linuxX64Target.url;
+
+  await $`curl -L -o xata ${binaryUrl}`;
+  await $`chmod +x xata`;
+  await $`sudo cp ./xata /usr/local/bin/xata`;
+
+  await $`xata branch delete ${process.env.VERCEL_GIT_COMMIT_REF} --yes || true`;
+  await $`xata branch create --name ${process.env.VERCEL_GIT_COMMIT_REF}`;
+
+  const branch: Types.BranchMetadata =
+    await $`xata branch view ${process.env.VERCEL_GIT_COMMIT_REF} --json`
+      .quiet()
+      .json();
+
+  console.log(`export DATABASE_URL='${branch.connectionString}'`);
+}
+
+main();
