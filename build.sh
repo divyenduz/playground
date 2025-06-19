@@ -14,7 +14,7 @@ set -e
 eval $(bun run build.ts)
 echo $FROM_ENV
 echo $DATABASE_URL
-next build
+DATABASE_URL=$DATABASE_URL next build
 
 vercel --help || true
 
