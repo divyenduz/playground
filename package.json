@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@xata.io/api": "^0.0.4",
     "next": "15.3.3",
     "postgres": "^3.4.7",
     "react": "^19.0.0",
