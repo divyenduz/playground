@@ -1,4 +1,4 @@
-import { Types } from "@xata.io/api";
+import type { Types } from "@xata.io/api";
 import { $ } from "bun";
 
 async function main() {
