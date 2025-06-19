@@ -9,6 +9,9 @@ export const fetchCache = "force-no-store";
 export default async function Home() {
   // invariant(process.env.DATABASE_URL, "DATABASE_URL is not set");
 
+  console.log(process.env);
+  console.log(process.env.DATABASE_URL);
+
   await createUser();
   const users = await listUsers();
 
