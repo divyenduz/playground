@@ -12,6 +12,6 @@ set -e
 # xata branch view --json
 
 eval $(bun run build.ts)
-echo $DATABASE_URL
 next build
+xata status
 xata branch wait-ready $VERCEL_GIT_COMMIT_REF
