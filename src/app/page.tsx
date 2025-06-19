@@ -17,6 +17,8 @@ export default async function Home() {
       <main className={styles.main}>
         Hello {process.env.FROM_ENV} / {process.env.VERCEL_GIT_COMMIT_REF} /{" "}
         {process.env.PLATFORM} {users.length}
+        DBURL: {process.env.DATABASE_URL?.substring(0, 20)}...
+        <br />
         {JSON.stringify(users, null, 2)}
       </main>
     </div>
