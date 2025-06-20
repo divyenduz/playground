@@ -16,7 +16,5 @@ echo $FROM_ENV
 echo $DATABASE_URL
 DATABASE_URL=$DATABASE_URL next build
 
-vercel --help || true
-
 # xata status
 # xata branch wait-ready $VERCEL_GIT_COMMIT_REF
