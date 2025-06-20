@@ -13,8 +13,9 @@ set -e
 
 eval $(bun run build.ts)
 echo $FROM_ENV >> .env
-echo $DATABASE_URL >> .env
-DATABASE_URL=$DATABASE_URL next build
+echo $DATABASE_URL >> .
+echo .env
+next build
 
 # xata status
 # xata branch wait-ready $VERCEL_GIT_COMMIT_REF
