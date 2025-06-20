@@ -22,8 +22,8 @@ async function main() {
       .quiet()
       .json();
 
-  console.log(`export DATABASE_URL='${branch.connectionString}';`);
-  console.log(`export FROM_ENV='test 2';`);
+  await $`echo "DATABASE_URL='${branch.connectionString}'" > .env`;
+  await $`echo "FROM_ENV='build.ts'" >> .env`;
 }
 
 main();
