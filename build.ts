@@ -23,7 +23,7 @@ async function main() {
       .json();
 
   console.log(`export DATABASE_URL='${branch.connectionString}';`);
-  console.log(`export FROM_ENV='test';`);
+  console.log(`export FROM_ENV='test 2';`);
 }
 
 main();
