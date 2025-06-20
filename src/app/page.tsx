@@ -25,13 +25,8 @@ export default async function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        From env: {process.env.FROM_ENV}
         <br />
         VERCEL_GIT_COMMIT_REF: {process.env.VERCEL_GIT_COMMIT_REF}
-        <br />
-        Platform: {process.env.PLATFORM}
-        <br />
-        DATABASE_URL: {process.env.DATABASE_URL?.substring(0, 20)}...
         <br />
         Users length: {users.length}
         <br />

@@ -23,7 +23,6 @@ async function main() {
       .json();
 
   await $`echo "DATABASE_URL='${branch.connectionString}'" > .env`;
-  await $`echo "FROM_ENV='build.ts'" >> .env`;
 }
 
 main();
