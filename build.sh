@@ -13,7 +13,7 @@ set -e
 
 eval $(bun run build.ts)
 echo $FROM_ENV >> .env
-echo $DATABASE_URL >> .
+echo $DATABASE_URL >> .env
 echo .env
 next build
 
