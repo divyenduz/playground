@@ -3,7 +3,7 @@
 import postgres from "postgres";
 import invariant from "tiny-invariant";
 
-export async function createUser(name: string) {
+export async function createUser(id: number, name: string) {
   invariant(process.env.DATABASE_URL, "DATABASE_URL is not set");
 
   const sql = postgres(process.env.DATABASE_URL!);

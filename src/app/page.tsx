@@ -10,8 +10,8 @@ export default async function Home() {
   invariant(process.env.DATABASE_URL, "DATABASE_URL is not set");
 
   try {
-    await createUser("Alice");
-    await createUser("Bob");
+    await createUser(1, "Alice");
+    await createUser(2, "Bob");
   } catch (e) {
     console.log(e);
   }
