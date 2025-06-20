@@ -14,7 +14,7 @@ set -e
 eval $(bun run build.ts)
 echo 'FROM_ENV=$FROM_ENV' >> .env
 echo 'DATABASE_URL=$DATABASE_URL' >> .env
-echo .env
+cat .env
 next build
 
 # xata status
